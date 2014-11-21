@@ -1,0 +1,13 @@
+Un système de fichiers « à la Unix ».
+
+Troisième couche logicielle, 2eme partie : structure d’un fichier
+
+INFOS
+===
+
+Need to execute these commands before the first run:
+
+	export HW_CONFIG=hardware.ini
+	export CURRENT_VOLUME=0
+
+The mknfs command need these two environment variables.
