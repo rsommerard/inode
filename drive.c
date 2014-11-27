@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 #include "drive.h"
 #include "hardware.h"
 #include "mbr.h"
@@ -9,6 +10,16 @@ extern struct mbr_s mbr;
 
 void seek(int cylinder, int sector)
 {
+    if(cylinder < 0 || cylinder >= HDA_MAXCYLINDER) {
+	    fprintf(stderr, "Error cylinder number (HDA_MAXCYLINDER = %d).\n", (HDA_MAXCYLINDER-1));
+	    exit(EXIT_FAILURE);
+    }
+
+    if(sector < 0 || sector >= HDA_MAXSECTOR) {
+	    fprintf(stderr, "Error sector number (HDA_MAXSECTOR = %d).\n", (HDA_MAXSECTOR-1));
+	    exit(EXIT_FAILURE);
+    }
+
     _out(HDA_DATAREGS, (cylinder >> 8) & 0xFF);
     _out(HDA_DATAREGS + 1, cylinder & 0xFF);
     _out(HDA_DATAREGS + 2, (sector >> 8) & 0xFF);

@@ -4,7 +4,7 @@
 ROOTDIR=./libhardware/
 
 CC	= gcc
-CFLAGS	= -Wall -ansi -pedantic -g
+CFLAGS	= -Wall -g
 LIBDIR  = -L$(ROOTDIR)/lib
 INCDIR  = -I$(ROOTDIR)/include
 LIBS    = -lhardware

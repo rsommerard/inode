@@ -8,6 +8,11 @@ static void empty_it()
     return;
 }
 
+void frmt()
+{
+    format_sector(0, 0, HDA_MAXCYLINDER * HDA_MAXSECTOR, 0);
+}
+
 int main(int argc, char **argv)
 {
     unsigned int i;
@@ -25,7 +30,7 @@ int main(int argc, char **argv)
     /* Allows all IT */
     _mask(1);
     
-    format_sector(0, 0, HDA_MAXCYLINDER * HDA_MAXSECTOR, 0);
+    frmt();
 
     /* and exit! */
     exit(EXIT_SUCCESS);

@@ -8,8 +8,6 @@
 #include "bloc.h"
 #include "inode.h"
 
-
-
 void read_inode(unsigned inumber, struct inode_s *inode)
 {
     assert(HDA_SECTORSIZE == sizeof(struct inode_s));
